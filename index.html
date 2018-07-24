@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>RocJohnson.com</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Start your project here-->
+
+
+    <div class="vh-100 black">
+        <div class="d-flex align-items-center vh-100">
+            <h1 class="orange-text darken-1 ml-5 text-uppercase">RocJohnson.com</h1>
+        </div>
+    </div>
+    <script>
+
+        jQuery.each( arrJson, function( key, value ) {
+            console.log( key + ":::: " + value );
+        });
+
+    </script>
+
+
+
+
+    <!--<div style="height: 100vh">
+        <div class="flex-center flex-column">
+            <h1 class="animated fadeIn mb-4">RocJohnson.com</h1>
+
+            <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+
+            <p class="animated fadeIn text-muted">MDB Team</p>
+        </div>
+    </div>-->
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        /*var homeTeam;
+        var homeScore;
+        var guestTeam;
+        var guestScore;
+        var jData;*/
+        //var strClient;
+        //var strProducedWith;
+        var arrJson;
+        $(function () {
+
+            //alert("jq world");
+            $.getJSON( "http://d8/rest/views/projects", function ( json ) {
+                //alert("hello world");
+                console.log(json);
+                arrJson = jQuery.makeArray( json );
+                //strClient = json[ 0 ].field_client[ 0 ].value
+
+                /*homeScore = json[ 0 ].field_home_score[ 0 ].value;
+                console.log( 'json.[ 0 ].vHomeScore.[ 0 ]:' + json[ 0 ].field_home_score[ 0 ].value );
+                guestScore = json[ 0 ].field_guest_score[ 0 ].value;
+                console.log( 'json[ 0 ].vGuestScore:' + json[ 0 ].field_guest_score[ 0 ].value );
+                homeTeam = json[ 0 ].field_home_team[ 0 ].value;
+                guestTeam = json[ 0 ].field_guest_team[ 0 ].value;*/
+                /*$( '#set' ).html( json[ 0 ].field_set_number[ 0 ].value );
+                $( '#set1Winner' ).html( json[ 0 ].field_set_1_winner[ 0 ].value );
+                $( '#set2Winner' ).html( json[ 0 ].field_set_2_winner[ 0 ].value );
+                $( '#set3Winner' ).html( json[ 0 ].field_set_3_winner[ 0 ].value );*/
+                //jData = 'jData: homeTeam - ' + homeTeam + ', homeScore - ' + homeScore + ', guestTeam - ' + guestTeam + ', guestScore - ' + guestScore;
+            });
+        });
+    </script>
+</body>
+
+</html>

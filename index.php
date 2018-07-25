@@ -11,7 +11,7 @@ $curl = curl_init();
 // Set some options - we are passing in a useragent too here
 curl_setopt_array($curl, array(
     CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => 'http://d8/rest/views/projects',
+    CURLOPT_URL => 'http://dev-rjmdb.pantheonsite.io/api/projects',
     CURLOPT_USERAGENT => 'Codular Sample cURL Request'
 ));
 // Send the request & save response to $resp
@@ -19,7 +19,8 @@ $data = curl_exec($curl);
 // Close request to clear up some resources
 curl_close($curl);
 
-$projects = json_decode($data,true);
+$projectsx = json_decode($data,true);
+$projects = json_decode($data);
 //print_r($projects);        // Dump all data of the Array
 
 ?>
@@ -46,33 +47,106 @@ $projects = json_decode($data,true);
 
 <!-- Start your project here-->
 
-<div class="vh-100 black">
-    <div class="d-flex align-items-center vh-100">
-        <h1 class="orange-text darken-1 ml-5 text-uppercase">RocJohnson.com</h1>
+
+<!--Main Navigation-->
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+        <a class="navbar-brand" href="#"><strong>Navbar</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Opinions</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<!--Main Navigation-->
+
+<div class="mt-5"></div>
+
+
+
+<div class="vh-100z blackz container">
+    <div class="d-flexz align-items-centerz vh-100z">
+       <!-- <h1 class="orange-text darken-1 ml-5 text-uppercase">RocJohnson.com</h1>-->
+
+
+
+
+
+        <!-- Card deck -->
+        <div class="card-deck">
+
+
+      <?php foreach ($projects as $project) : ?>
+
+            <!-- Card -->
+            <div class="card mb-4">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title"><?php echo $project->field_project_name; ?></h4>
+                    <!--Text-->
+                    <p class="card-text"><?php echo $project->field_project_description; ?></p>
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                    <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+                </div>
+
+            </div>
+            <!-- Card -->
+
+
+      <?php endforeach; ?>
+
+
+
+
+
+        </div>
+        <!-- Card deck -->
+
+
+
     </div>
 
 
-    <div>
-        <p>Hello World.</p>
-        <?php
-
-        echo '<script>';
-        echo 'console.log('. json_encode( $data ) .')';
-        echo '</script>';
-
-        echo $projects[0]->field_client->value;
-
-        echo $projects[0]["field_client"]; // Access Array data
-
-
-        foreach ($data as $key => $value) {
-            // $arr[3] will be updated with each value from $arr...
-            echo "{$key} => {$value} ";
-            //print_r($arr);
-        }
-
-        ?>
-    </div>
 </div>
 
 

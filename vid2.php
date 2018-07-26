@@ -91,8 +91,7 @@ $projects = json_decode($data);
 
 
 
-
-
+<header>
   <!-- Full Page Intro -->
   <div class="view">
     <video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
@@ -112,10 +111,10 @@ $projects = json_decode($data);
         <!--Grid row-->
         <div class="row wow fadeIn">
           <!--Grid column-->
-          <div class="col-md-12 mb-4 white-text text-center wow fadeIn">
-            <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">Creative Agency</h3>
+          <div class="col-md-12 mb-4 white-text text-centerz">
+            <p class="display-5 font-weight-bold white-text mb-0 pt-md-5 pt-5 wow fadeIn text-uppercase letterspace10" data-wow-delay="0.6s" data-wow-duration="9.0s">RocJohnson.com</p>
             <hr class="hr-light my-4 w-75">
-            <h4 class="subtext-header mt-2 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit deleniti consequuntur nihil.</h4>
+            <h4 class="subtext-header mt-2 mb-4 wow fadeIn" data-wow-delay="1.6s" data-wow-duration="9.0s">A Web professional with 20+ years' experience delivering strategic and innovative digital solutions</h4>
             <a href="#!" class="btn btn-rounded btn-outline-white">
               <i class="fa fa-home"></i> Visit us
             </a>
@@ -132,7 +131,21 @@ $projects = json_decode($data);
 </header>
 
 
-
+<!--Main Layout-->
+<main>
+    <div class="container">
+        <!--Grid row-->
+        <div class="row py-5">
+            <!--Grid column-->
+            <div class="col-md-12 text-center">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+</main>
+<!--Main Layout-->
 
 
 <!-- /Start your project here-->
@@ -146,6 +159,11 @@ $projects = json_decode($data);
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+<script>
+    new WOW().init();
+</script>
 
 </body>
 

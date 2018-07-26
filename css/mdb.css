@@ -13608,6 +13608,11 @@ section.team-section .avatar img {
 body {
   font-family: "Muli", sans-serif; }
 
+.home-rj {
+  font-family: "Muli Black";
+  font-size: 96px;
+  /*font-weight: 900;*/ }
+
 .vh-100 {
   height: 100vh; }
 

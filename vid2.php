@@ -112,7 +112,7 @@ $projects = json_decode($data);
         <div class="row wow fadeIn">
           <!--Grid column-->
           <div class="col-md-12 mb-4 white-text text-centerz">
-            <p class="display-5 font-weight-bold white-text mb-0 pt-md-5 pt-5 wow fadeIn text-uppercase letterspace10" data-wow-delay="0.6s" data-wow-duration="9.0s">RocJohnson.com</p>
+            <h1 class="display-3z font-weight-boldz white-text mb-0 pt-md-5 pt-5 wow fadeIn text-uppercase letterspace10 home-rj orange-textz darken-1z" data-wow-delay="0.6s" data-wow-duration="9.0s">RocJohnson.com</h1>
             <hr class="hr-light my-4 w-75">
             <h4 class="subtext-header mt-2 mb-4 wow fadeIn" data-wow-delay="1.6s" data-wow-duration="9.0s">A Web professional with 20+ years' experience delivering strategic and innovative digital solutions</h4>
             <a href="#!" class="btn btn-rounded btn-outline-white">

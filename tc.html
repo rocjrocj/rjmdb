@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="frog()">
+<script>
+
+    function frog() {
+        var A = [1, 3, 1, 4, 2, 3, 5, 4];
+
+
+
+        var X = 5;
+
+        let sequence = [0];
+        let position = -1;
+        let counter = 0;
+
+        if (X === 1 && A[0] === 1)
+            return 0;
+
+        for (let i = 0; i <= A.length - 1; i++) {
+
+            if (A[i] <= X) {
+                if (!sequence[A[i]]) {
+                    counter++;
+                }
+
+                sequence[A[i]] = A[i];
+
+                if (counter === X) {
+                    position = i;
+                    break;
+                }
+            }
+        }
+        console.log('position='+position);
+        return position;
+    }
+
+    function perm() {
+        var A = [4,1,3,2,7,5,6];
+
+        A.sort();
+        console.log('A='+A);
+        var curNum = A[0];
+        var nextNum = 0;
+        var ans = 0;
+        for (var i = 0; i < A.length; i++) {
+            nextNum = A[i];
+            console.log('nextNum='+nextNum);
+            if (curNum != nextNum) {
+                ans = 1;
+                break;
+            } else {
+                curNum++;
+            }
+        }
+        console.log('ans='+ans);
+        return ans;
+
+    }
+
+    function tape() {
+        var A = [3, 1, 2, 4, 3];
+
+        var tLength = A.length;
+        var tSections = A.length - 1;
+        console.log('tSections = ' + tSections)
+        //for (var j = 0; j < tSections; j++)
+        var tNew = [];
+        var tFinal = 0;
+        var minDif = null;
+        for (var i = 0; i < tLength; i++) {
+            tNew = A.shift();
+            console.log('tNew = ' + tNew)
+            var tLast = 0;
+            for (var j = 0; j < A.length; j++) {
+                tLast = tLast + A[j];
+                console.log('tLast = ' + tLast)
+            }
+            tFinal = Math.abs(tNew - tLast);
+            console.log('tFinal = ' + tFinal);
+            if (!minDif || minDif > tFinal) {
+                minDif = tFinal;
+                console.log('minDif = ' + minDif);
+            }
+        }
+        console.log('tFinal end = ' + tFinal);
+        console.log('minDif end = ' + minDif);
+    }
+
+
+    function miss() {
+        var A = [2, 3, 1, 5];
+
+        A.sort();
+        console.log(A);
+
+        /*var curA = A[0];
+        var incA = A[1] + 1;
+        if (curA + 1 !== incA + 1) {
+
+        }*/
+        var ans = 0;
+        for (var i = 0; i < A.length; i++) {
+            var curA = A[i] + 1;
+            console.log('curA = ' + curA);
+            var incA = A[i + 1];
+            console.log('incA = ' + incA);
+            if (curA != incA) {
+                ans = curA;
+                break
+            }
+        }
+        console.log('ans = ' + ans);
+
+
+
+
+    }
+
+
+    function tc() {
+        var X = 10;
+        var Y = 85;
+        var D = 30;
+
+        /*var counter = 0;
+        var curX = X;
+        //var dist = 0;
+
+        for (var i = 0; i < Y; i++) {
+            counter++;
+            var curX = +curX + +D;
+            //curX = dist;
+            console.log('curX = '+curX)
+            if (curX >= Y) {
+                break;
+            }
+        }
+        console.log('curX at end = '+curX)
+        console.log('counter at end = '+counter)*/
+
+        console.log('answer = '+ Math.ceil((Y-X)/D));
+    }
+
+</script>
+
+
+
+
+</body>
+</html>
